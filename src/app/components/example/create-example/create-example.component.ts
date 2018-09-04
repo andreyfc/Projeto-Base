@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExampleService } from '../example.service';
 
 @Component({
   selector: 'app-create-example',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateExampleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ExampleService) { }
+
+  response;
 
   ngOnInit() {
+  }
+
+  public testarPost() {
+    this.service.post().subscribe(
+        data => this.response = data, error => console.log(error), () => {
+          alert("Sucesso")
+        }
+    );
   }
 
 }

@@ -14,4 +14,23 @@ export class ExampleService {
       (res) => res.json()
     );
   }
+
+  public post() {
+    const headers = new Headers({
+        'Content-Type': 'application/json'
+    });
+    const content = JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    })
+    const options = new RequestOptions({ headers: headers });
+    return this.http.post(
+      'https://jsonplaceholder.typicode.com/posts',content, options
+    ).map((res) => {
+      res.json();
+    });
+   }
+
+
 }
