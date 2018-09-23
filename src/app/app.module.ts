@@ -10,6 +10,9 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 import { SidenavComponent } from './theme/sidenav/sidenav.component';
 import { CarregarComponent } from './theme/carregar/carregar.component';
 
+import { FileSelectDirective } from 'ng2-file-upload';
+import { HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +21,15 @@ import { CarregarComponent } from './theme/carregar/carregar.component';
     FileUploadComponent,
     SidenavComponent,
     CarregarComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
     ExampleRoutingModule,
     ExampleModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
