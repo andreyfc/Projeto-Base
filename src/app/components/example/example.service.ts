@@ -20,7 +20,7 @@ export class ExampleService {
         'Content-Type': 'application/json'
     });
     const content = JSON.stringify({
-      title: 'foooo',
+      title: 'fooo',
       body: 'bar',
       userId: 1
     })
